@@ -1,0 +1,23 @@
+{
+  "name": "mo",
+  "version": "0.0.1",
+  "description": "一个摸了的vue ui框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XXXXXie1997/Mo-UI-Demo1.git"
+  },
+  "keywords": [
+    "vue",
+    "ui"
+  ],
+  "author": "XXXXXie1997",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XXXXXie1997/Mo-UI-Demo1/issues"
+  },
+  "homepage": "https://github.com/XXXXXie1997/Mo-UI-Demo1#readme"
+}
