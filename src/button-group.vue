@@ -3,7 +3,16 @@
 </template>
 
 <script lang='ts'>
-
+export default {
+  mounted() {
+    for(let node of this.$el.children){
+      let name = node.nodeName.toLowerCase()
+      if(name  !== 'button'){
+        console.warn(`g-button-group子元素需要全部使用'g-button'，而你的代码使用了'${name}'`)
+      }
+    }
+  }
+}
 </script>
 
 <style lang='scss'>
