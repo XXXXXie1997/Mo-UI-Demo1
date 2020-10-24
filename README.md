@@ -8,4 +8,13 @@
 *{box-sizing:border-box}
 ```
 
+## bug记录
+### 2020/10/24
+在使用 Karma + Mocha做单元测试时出现vue报错：
 
+'[Vue warn]: Unknown custom element: <g-icon> - did you register the component correctly? For recursive components, make sure to provide the "name" option.
+
+(found in <Root>)'
+
+---
+待解决
