@@ -37,7 +37,7 @@
  
 2. 安装mo
  ```
-npm i --save Mo-UI-Demo1
+npm i --save mo-ui-beta
 ```
 
 3. 引入mo
