@@ -2,15 +2,64 @@
 
 [![Build Status](https://www.travis-ci.org/XXXXXie1997/Mo-UI-Demo1.svg?branch=master)](https://www.travis-ci.org/XXXXXie1997/Mo-UI-Demo1)
 
+## 介绍
+
+此项目为本人在vue的学习过程中制作的UI框架，希望能帮到你。
+
 ## 开始使用
 
 1. 安装
 
-使用本框架前请在CSS中开启border-box。
+    使用本框架前请在CSS中开启border-box。
+    
+    ```
+    *,*::before,*::after{box-sizing:border-box}
+    ```
+    IE 8 及以上浏览器支持此样式。
+    
+    同时你还需要设置浏默认颜色等变量（开发中，后续会改为SCSS变量）。
+    
+    
+    ```
+        html {
+                --button-height: 32px;
+                --font-size: 14px;
+                --button-bg: white;
+                --button-active-bg: #eee;
+                --border-radius: 4px;
+                --color: #333;
+                --border-color: #999;
+                --border-color-hover: #666;
+            }
+    
+    ```
+    IE 15 及以上浏览器支持此样式
+ 
+2. 安装mo
+ ```
+npm i --save Mo-UI-Demo1
+```
 
+3. 引入mo
 ```
-*{box-sizing:border-box}
+import {Button,ButtonGroup,Icon} from 'Mo-UI-Demo1'
+import 'Mo-UI-Demo1/dist/index.css'
+
+export default {
+    name:'app',
+    components:{
+        HelloWorld,
+        'g-button':Button,
+        'g-icon':Icon
+    }
+}
 ```
+
+4. 引入 svg symbols
+```
+<script src="//at.alicdn.com/t/font_2139648_xraw3l167s.js"></script>
+```
+
 
 
 ## 文档
