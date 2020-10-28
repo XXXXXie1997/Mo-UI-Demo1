@@ -42,8 +42,8 @@ npm i --save Mo-UI-Demo1
 
 3. 引入mo
 ```
-import {Button,ButtonGroup,Icon} from 'Mo-UI-Demo1'
-import 'Mo-UI-Demo1/dist/index.css'
+import {Button,ButtonGroup,Icon} from 'mo-ui-beta'
+import 'mo-ui-beta/dist/index.css'
 
 export default {
     name:'app',
