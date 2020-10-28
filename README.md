@@ -1,4 +1,4 @@
-# 摸UI-已经摸了的Vue UI组件
+# 摸UI-已经摸了的Vue UI组件库
 
 [![Build Status](https://www.travis-ci.org/XXXXXie1997/Mo-UI-Demo1.svg?branch=master)](https://www.travis-ci.org/XXXXXie1997/Mo-UI-Demo1)
 
@@ -57,15 +57,15 @@ export default {
 
 
 ## 文档
-
+*待编辑*
 ## 提问
-
+*待编辑*
 ## 变更记录
-
+*待编辑*
 ## 联系方式
-
+*待编辑*
 ## 贡献
-
+*待编辑*
 
 ## bug记录
 ### 2020/10/24
