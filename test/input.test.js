@@ -89,9 +89,10 @@ describe('Input', () => {
       vm.$on('change', callback)
 
       let event = new Event('change');
+      Object.defineProperty(event, 'target', {value: {value: 'hi'}, enumerable: true})
       let inputElement = vm.$el.querySelector('input')
       inputElement.dispatchEvent(event)
-      expect(callback).to.have.been.calledWith(event)
+      expect(callback).to.have.been.calledWith('hi')
     })
     it('支持 input 事件', () => {
       vm = new Constructor({}).$mount()
@@ -99,9 +100,10 @@ describe('Input', () => {
       vm.$on('input', callback)
 
       let event = new Event('input');
+      Object.defineProperty(event, 'target', {value: {value: 'hi'}, enumerable: true})
       let inputElement = vm.$el.querySelector('input')
       inputElement.dispatchEvent(event)
-      expect(callback).to.have.been.calledWith(event)
+      expect(callback).to.have.been.calledWith('hi')
     })
     it('支持 focus 事件', () => {
       vm = new Constructor({}).$mount()
@@ -109,9 +111,10 @@ describe('Input', () => {
       vm.$on('focus', callback)
 
       let event = new Event('focus');
+      Object.defineProperty(event, 'target', {value: {value: 'hi'}, enumerable: true})
       let inputElement = vm.$el.querySelector('input')
       inputElement.dispatchEvent(event)
-      expect(callback).to.have.been.calledWith(event)
+      expect(callback).to.have.been.calledWith('hi')
     })
     it('支持 blur 事件', () => {
       vm = new Constructor({}).$mount()
@@ -119,9 +122,10 @@ describe('Input', () => {
       vm.$on('blur', callback)
 
       let event = new Event('blur');
+      Object.defineProperty(event, 'target', {value: {value: 'hi'}, enumerable: true})
       let inputElement = vm.$el.querySelector('input')
       inputElement.dispatchEvent(event)
-      expect(callback).to.have.been.calledWith(event)
+      expect(callback).to.have.been.calledWith('hi')
     })
   })
 
