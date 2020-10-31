@@ -4,10 +4,10 @@ import Icon from './icon.vue'
 import ButtonGroup from './button-group'
 import Input from './input'
 
-Vue.component('g-icon',Icon)
-Vue.component('g-button',Button)
-Vue.component('g-button-group',ButtonGroup)
-Vue.component('g-input',Input)
+Vue.component('mo-icon',Icon)
+Vue.component('mo-button',Button)
+Vue.component('mo-button-group',ButtonGroup)
+Vue.component('mo-input',Input)
 
 
 

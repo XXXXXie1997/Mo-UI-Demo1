@@ -1,5 +1,5 @@
 <template>
-    <div class="g-button-group">
+    <div class="mo-button-group">
         <slot></slot>
     </div>
 </template>
@@ -11,7 +11,7 @@
       for (let node of this.$el.children) {
         let name = node.nodeName.toLowerCase();
         if (name !== 'button') {
-          console.warn(`g-button-group子元素需要全部使用'g-button'，而你的代码使用了'${name}'`);
+          console.warn(`mo-button-group子元素需要全部使用'mo-button'，而你的代码使用了'${name}'`);
         }
       }
     }
@@ -19,11 +19,11 @@
 </script>
 
 <style lang='scss' scoped>
-    .g-button-group {
+    .mo-button-group {
         display: inline-flex;
         vertical-align: middle;
 
-        > .g-button {
+        > .mo-button {
             border-radius: 0;
 
             &:not(:first-child) {

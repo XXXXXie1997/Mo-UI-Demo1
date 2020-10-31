@@ -1,8 +1,8 @@
 <template>
-    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}"
+    <button class="mo-button" :class="{[`icon-${iconPosition}`]:true}"
             @click="$emit('click')">
-        <g-icon class='icon' v-if="icon &&! loading" :name="icon"></g-icon>
-        <g-icon class='loading icon' v-if="loading" name="loading"></g-icon>
+        <mo-icon class='icon' v-if="icon &&! loading" :name="icon"></mo-icon>
+        <mo-icon class='loading icon' v-if="loading" name="loading"></mo-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -15,7 +15,7 @@
   export default {
       name:'MoButton',
     components:{
-      'g-icon':Icon
+      'mo-icon':Icon
     },
     props: {
       icon: {},
@@ -44,7 +44,7 @@
         }
     }
 
-    .g-button {
+    .mo-button {
         font-size: var(--font-size);
         height: var(--button-height);
         padding: 0 1em;
