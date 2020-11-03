@@ -37,30 +37,36 @@
 </head>
 <body>
 <div id="app">
-    <mo-row>
-        <mo-col>1</mo-col>
-        <mo-col>2</mo-col>
-    </mo-row>
-    <mo-row>
-        <mo-col>1</mo-col>
-        <mo-col>2</mo-col>
-        <mo-col>3</mo-col>
-    </mo-row>
-    <mo-row>
-        <mo-col>1</mo-col>
-        <mo-col>2</mo-col>
-        <mo-col>3</mo-col>
-        <mo-col>4</mo-col>
-    </mo-row>
-    <mo-row>
-        <mo-col span="2">1</mo-col>
-        <mo-col span="22">11</mo-col>
-    </mo-row>
-    <mo-row>
-        <mo-col span="4">2</mo-col>
-        <mo-col span="20">10</mo-col>
-    </mo-row>
-
+    <div style="border:1px solid black">
+        <mo-row gutter="20">
+            <mo-col>1</mo-col>
+            <mo-col>2</mo-col>
+        </mo-row>
+        <mo-row gutter="20">
+            <mo-col>1</mo-col>
+            <mo-col>2</mo-col>
+            <mo-col>3</mo-col>
+        </mo-row>
+        <mo-row gutter="20">
+            <mo-col>1</mo-col>
+            <mo-col>2</mo-col>
+            <mo-col>3</mo-col>
+            <mo-col>4</mo-col>
+        </mo-row>
+        <mo-row gutter="20">
+            <mo-col span="2">1</mo-col>
+            <mo-col span="22">11</mo-col>
+        </mo-row>
+        <mo-row>
+            <mo-col span="4">2</mo-col>
+            <mo-col span="18" offset="2">9</mo-col>
+        </mo-row>
+        <mo-row>
+            <mo-col span="2">1</mo-col>
+            <mo-col span="16" offset="1">8</mo-col>
+            <mo-col span="2" offset="3">1</mo-col>
+        </mo-row>
+    </div>
     <hr>
     <div class="box">
         <mo-input v-model="message"></mo-input>
