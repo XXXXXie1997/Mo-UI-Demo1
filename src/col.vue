@@ -14,6 +14,19 @@
       offset: {
         type: [Number, String],
       },
+      phone: {
+        type: Object,
+        validator(value) {
+          let keys = Object.keys(value);
+          let valid = true;
+          keys.forEach(key => {
+            if (!['span', 'offset'].includes(key)) {
+              valid = false;
+            }
+          });
+          return valid;
+        }
+      }
     },
     data() {
       return {
@@ -22,10 +35,15 @@
     },
     computed: {
       colClass() {
-        let {span, offset} = this;
+        let {span, offset, phone} = this;
+        let phoneClass;
+        if (phone) {
+          phoneClass = [`col-phone-${phone.span}`];
+        }
         return [
-          `col-${span}`,
-          offset && `offset-${offset}`
+          span && `col-${span}`,
+          offset && `offset-${offset}`,
+          ...phoneClass
         ];
       },
       colStyle() {
@@ -56,4 +74,7 @@
         }
     }
 
+    @media (max-width: 576px) {
+
+    }
 </style>

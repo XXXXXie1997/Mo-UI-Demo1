@@ -39,24 +39,10 @@
 <body>
 <div id="app">
     <div style="border:1px solid black">
+
         <mo-row gutter="20">
-            <mo-col>1</mo-col>
-            <mo-col>2</mo-col>
-        </mo-row>
-        <mo-row gutter="20">
-            <mo-col>1</mo-col>
-            <mo-col>2</mo-col>
-            <mo-col>3</mo-col>
-        </mo-row>
-        <mo-row gutter="20">
-            <mo-col>1</mo-col>
-            <mo-col>2</mo-col>
-            <mo-col>3</mo-col>
-            <mo-col>4</mo-col>
-        </mo-row>
-        <mo-row gutter="20">
-            <mo-col span="2">1</mo-col>
-            <mo-col span="22">11</mo-col>
+            <mo-col span="2" :phone="{span:12}">1</mo-col>
+            <mo-col span="20" offset="2" :phone="{span:12,offset:0}" >10</mo-col>
         </mo-row>
         <mo-row>
             <mo-col span="4">2</mo-col>
