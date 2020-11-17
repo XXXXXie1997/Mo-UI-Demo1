@@ -4,7 +4,7 @@
     </div>
 </template>
 
-<script lang='ts'>
+<script>
   export default {
     name: 'MoRow',
     props: {
@@ -43,6 +43,7 @@
 <style lang='scss' scoped>
     .row {
         display: flex;
+        flex-wrap: wrap;
         &.align-left{
             justify-content: flex-start;
         }
