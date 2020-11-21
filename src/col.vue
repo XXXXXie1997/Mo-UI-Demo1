@@ -35,7 +35,7 @@
         if (!obj) {return []}
         let array = []
         if (obj.span) {array.push(`col-${str}${obj.span}`)}
-        if (obj.offset) {array.push(`offset-${str}-${obj.offset}`)}
+        if (obj.offset) {array.push(`offset-${str}${obj.offset}`)}
         return array
       }
 
