@@ -5,16 +5,16 @@
 </template>
 
 <script>
-    let validator=(value)=>{
-      let keys = Object.keys(value);
-      let valid = true;
-      keys.forEach(key => {
-        if (!['span', 'offset'].includes(key)) {
-          valid = false;
-        }
-      });
-      return valid;
-    }
+  let validator = (value) => {
+    let keys = Object.keys(value);
+    let valid = true;
+    keys.forEach(key => {
+      if (!['span', 'offset'].includes(key)) {
+        valid = false;
+      }
+    });
+    return valid;
+  }
   export default {
     name: 'MoCol',
     props: {
@@ -30,16 +30,27 @@
         gutter: 0,
       };
     },
+    methods: {
+      createClasses(obj, str = '') {
+        if (!obj) {return []}
+        let array = []
+        if (obj.span) {array.push(`col-${str}${obj.span}`)}
+        if (obj.offset) {array.push(`offset-${str}-${obj.offset}`)}
+        return array
+      }
+
+    },
     computed: {
       colClass() {
-        let {span, offset,pad,narrowPc,pc,widePc} = this;
+        let {span, offset, pad, narrowPc, pc, widePc} = this;
 
-        return[span && `col-${span}`,
-          offset && `offset-${offset}`,
-          ...(pad ? [`col-pad-${pad.span}`]:[]),
-          ...(narrowPc ? [`col-narrow-pc-${narrowPc.span}`]:[]),
-          ...(pc ? [`col-pc-${pc.span}`]:[]),
-          ...(widePc ? [`col-wide-pc-${widePc.span}`]:[]),
+        let createClasses = this.createClasses
+        return [
+          ...createClasses({span, offset}),
+          ...createClasses(pad, 'pad-'),
+          ...createClasses(narrowPc, 'narrow-pc-'),
+          ...createClasses(pc, 'pc-'),
+          ...createClasses(widePc, 'wide-pc-'),
         ];
       },
       colStyle() {
