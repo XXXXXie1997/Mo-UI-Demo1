@@ -28,7 +28,7 @@
       rowClass(){
         let {align} = this
         return [
-         align && 'align-${align}'
+         align && `align-${align}`
         ]
       }
     },
