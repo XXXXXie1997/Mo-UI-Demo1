@@ -38,17 +38,36 @@
             border: 1px solid #666666;
             min-height: 100px;
         }
+
+        .sider {
+            background: #333;
+            width: 150px;
+        }
+
+        .sider.slide-enter, .sider.slide-leave-to {
+            margin-left: -150px;
+        }
+
+        .header {
+            background: #999;
+            height: 100px;
+        }
+
+        .footer {
+            background: #ccc;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
 <div id="app">
     <mo-layout style="height: 100vh">
-        <mo-header class="demo">header</mo-header>
+        <mo-sider>sider</mo-sider>
         <mo-layout>
-            <mo-sider class="demo">sider</mo-sider>
-            <mo-content class="demo">content</mo-content>
+            <mo-header>header</mo-header>
+            <mo-content>content</mo-content>
+            <mo-footer>footer</mo-footer>
         </mo-layout>
-        <mo-footer class="demo">footer</mo-footer>
     </mo-layout>
 </div>
 
