@@ -10,39 +10,37 @@ import Header from './header'
 import Sider from './sider'
 import Content from './content'
 import Footer from './footer'
+import Toast from './toast'
+import Plugin from './plugin'
 
-Vue.component('mo-icon',Icon)
-Vue.component('mo-button',Button)
-Vue.component('mo-button-group',ButtonGroup)
-Vue.component('mo-input',Input)
-Vue.component('mo-row',Row)
-Vue.component('mo-col',Col)
-Vue.component('mo-layout',Layout)
-Vue.component('mo-sider',Sider)
-Vue.component('mo-header',Header)
-Vue.component('mo-content',Content)
-Vue.component('mo-footer',Footer)
-
+Vue.component('mo-icon', Icon)
+Vue.component('mo-button', Button)
+Vue.component('mo-button-group', ButtonGroup)
+Vue.component('mo-input', Input)
+Vue.component('mo-row', Row)
+Vue.component('mo-col', Col)
+Vue.component('mo-layout', Layout)
+Vue.component('mo-sider', Sider)
+Vue.component('mo-header', Header)
+Vue.component('mo-content', Content)
+Vue.component('mo-footer', Footer)
+Vue.component('mo-toast', Toast)
+Vue.use(Plugin)
 
 
 new Vue({
-  el:'#app',
-  data:{
-    loading1:false,
-    loading2:true,
-    loading3:false,
-    message:'hi',
+  el: '#app',
+  data: {
+    loading1: false,
+    loading2: true,
+    loading3: false,
+    message: 'hi',
   },
-  created(){
-    setTimeout(()=>{
-      let event = new Event('change');
-      let inputElement = this.$el.querySelector('input')
-      inputElement.dispatchEvent(event)
-    },3000)
+  created() {
   },
-  methods:{
-    inputChange(e){
-      console.log(e)
+  methods: {
+    showToast() {
+      this.$toast('message')
     }
   }
 })

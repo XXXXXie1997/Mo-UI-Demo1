@@ -33,42 +33,11 @@
             font-size: var(--font-size);
         }
     </style>
-    <style>
-        .demo {
-            border: 1px solid #666666;
-            min-height: 100px;
-        }
 
-        .sider {
-            background: #333;
-            width: 150px;
-        }
-
-        .sider.slide-enter, .sider.slide-leave-to {
-            margin-left: -150px;
-        }
-
-        .header {
-            background: #999;
-            height: 100px;
-        }
-
-        .footer {
-            background: #ccc;
-            height: 50px;
-        }
-    </style>
 </head>
 <body>
 <div id="app">
-    <mo-layout style="height: 100vh">
-        <mo-sider>sider</mo-sider>
-        <mo-layout>
-            <mo-header>header</mo-header>
-            <mo-content>content</mo-content>
-            <mo-footer>footer</mo-footer>
-        </mo-layout>
-    </mo-layout>
+  <button @click="showToast">poke</button>
 </div>
 
 <script src="./src/app.js"></script>
