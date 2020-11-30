@@ -41,9 +41,51 @@ new Vue({
 
   },
   methods: {
-    showToast() {
+    showToast1() {
       this.$toast('丢人！',{
         position:'top',
+        enableHtml: false,
+        closeButton: {
+          text:'摸了',
+          callback(toast){
+            console.log('他说他要摸了')
+          }
+        },
+        autoClose:false,
+        autoCloseDelay: 3
+      })
+    },
+    showToast2() {
+      this.$toast('丢人！',{
+        position:'middle',
+        enableHtml: false,
+        closeButton: {
+          text:'摸了',
+          callback(toast){
+            console.log('他说他要摸了')
+          }
+        },
+        autoClose:false,
+        autoCloseDelay: 3
+      })
+    },
+    showToast3() {
+      this.$toast('丢人！',{
+        position:'bottom',
+        enableHtml: false,
+        closeButton: {
+          text:'摸了',
+          callback(toast){
+            console.log('他说他要摸了')
+          }
+        },
+        autoClose:false,
+        autoCloseDelay: 3
+      })
+    },
+    showToast(position) {
+      this.$toast('丢人！',{
+        position,
         enableHtml: false,
         closeButton: {
           text:'摸了',
