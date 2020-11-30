@@ -51,8 +51,8 @@ new Vue({
             console.log('他说他要摸了')
           }
         },
-        autoClose:false,
-        autoCloseDelay: 3
+        autoClose:true,
+        autoCloseDelay: 5
       })
     },
     showToast2() {
