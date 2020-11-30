@@ -37,15 +37,17 @@ new Vue({
     message: 'hi',
   },
   created() {
-    this.$toast('<strong>加粗文字</strong>',{
-      enableHtml: false
-      // closeButton: {
-      //   text:'rua',
-      //   callback(toast){
-      //     toast.log()
-      //     console.log('摸了')
-      //   }
-      // }
+    this.$toast('丢人！',{
+      position:'top',
+      enableHtml: false,
+      closeButton: {
+        text:'摸了',
+        callback(toast){
+          console.log('他说他要摸了')
+        }
+      },
+      autoClose:false,
+      autoCloseDelay: 3
     })
 
   },
