@@ -37,10 +37,20 @@ new Vue({
     message: 'hi',
   },
   created() {
+    this.$toast('<strong>加粗文字</strong>',{
+      enableHtml: false
+      // closeButton: {
+      //   text:'rua',
+      //   callback(toast){
+      //     toast.log()
+      //     console.log('摸了')
+      //   }
+      // }
+    })
+
   },
   methods: {
     showToast() {
-      this.$toast('message')
     }
   }
 })
