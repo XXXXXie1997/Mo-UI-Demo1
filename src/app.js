@@ -37,22 +37,23 @@ new Vue({
     message: 'hi',
   },
   created() {
-    this.$toast('丢人！',{
-      position:'top',
-      enableHtml: false,
-      closeButton: {
-        text:'摸了',
-        callback(toast){
-          console.log('他说他要摸了')
-        }
-      },
-      autoClose:false,
-      autoCloseDelay: 3
-    })
+
 
   },
   methods: {
     showToast() {
+      this.$toast('丢人！',{
+        position:'top',
+        enableHtml: false,
+        closeButton: {
+          text:'摸了',
+          callback(toast){
+            console.log('他说他要摸了')
+          }
+        },
+        autoClose:false,
+        autoCloseDelay: 3
+      })
     }
   }
 })
