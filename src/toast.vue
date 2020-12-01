@@ -21,12 +21,11 @@
     name: 'MoToast',
     props: {
       autoClose: {
-        type: Boolean,
-        default: true
-      },
-      autoCloseDelay: {
-        type: Number,
-        default: 5
+        type: [Boolean, Number],
+        default: 5,
+        validator(value) {
+            return value === false || typeof value === 'number'
+        }
       },
       closeButton: {
         type: Object,
@@ -68,7 +67,7 @@
         if (this.autoClose) {
           setTimeout(() => {
             this.close()
-          }, this.autoCloseDelay * 1000)
+          }, this.autoClose * 1000)
         }
       },
       updateStyles() {
@@ -81,9 +80,6 @@
         this.$el.remove()
         this.$emit('close')
         this.$destroy()
-      },
-      log() {
-        console.log('test')
       },
       onClickClose() {
         this.close()
@@ -110,6 +106,7 @@
             transform: translateY(0%);
         }
     }
+
     @keyframes slide-down {
         0% {
             transform: translateY(-100%);
@@ -118,6 +115,7 @@
             transform: translateY(0%);
         }
     }
+
     @keyframes fade-in {
         0% {
             opacity: 0;
@@ -132,7 +130,7 @@
         position: fixed;
         left: 50%;
         transform: translateX(-50%);
-        $animation-duration:300ms;
+        $animation-duration: 300ms;
 
         &.position-top {
             top: 0;
@@ -157,7 +155,8 @@
         &.position-middle {
             top: 50%;
             transform: translateX(-50%) translateY(-50%);
-            .toast{
+
+            .toast {
                 animation: fade-in $animation-duration;
             }
         }

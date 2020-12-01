@@ -51,8 +51,7 @@ new Vue({
             console.log('他说他要摸了')
           }
         },
-        autoClose:true,
-        autoCloseDelay: 5
+        autoClose:3,
       })
     },
     showToast2() {
@@ -65,8 +64,7 @@ new Vue({
             console.log('他说他要摸了')
           }
         },
-        autoClose:false,
-        autoCloseDelay: 3
+        autoClose:3,
       })
     },
     showToast3() {
@@ -79,8 +77,7 @@ new Vue({
             console.log('他说他要摸了')
           }
         },
-        autoClose:false,
-        autoCloseDelay: 3
+        autoClose:3,
       })
     },
     showToast(position) {
@@ -93,8 +90,7 @@ new Vue({
             console.log('他说他要摸了')
           }
         },
-        autoClose:false,
-        autoCloseDelay: 3
+        autoClose:3,
       })
     }
   }
