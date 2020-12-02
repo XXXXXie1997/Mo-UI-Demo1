@@ -36,11 +36,11 @@
     mounted() {
       this.$children.forEach((vm) => {
         if (vm.$options.name === 'MoTabsHead') {
-          vm.$children.forEach((item) => {
-            if (item.$options.name === 'MoTabsItem'
-              && item.$props.name === this.selected) {
-              console.log(item.$el)
-              this.eventBus.$emit('update:selected', this.selected,item)
+          vm.$children.forEach((childVm) => {
+            if (childVm.$options.name === 'MoTabsItem'
+              && childVm.$props.name === this.selected) {
+              console.log(childVm.$el)
+              this.eventBus.$emit('update:selected', this.selected,childVm)
             }
           })
         }
