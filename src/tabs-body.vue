@@ -6,7 +6,11 @@
 
 <script lang='ts'>
   export default {
-    name: 'MoTabsBody'
+    name: 'MoTabsBody',
+    inject:['eventBus'],
+    created() {
+
+    }
   };
 </script>
 
