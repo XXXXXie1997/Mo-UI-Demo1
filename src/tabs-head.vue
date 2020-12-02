@@ -11,34 +11,36 @@
 
 <script lang='js'>
   export default {
-    name:'MoTabsHead',
-    inject:['eventBus'],
-    created() {
-this.eventBus.$on('update:selected',(item,vm)=>{
-
-
-})
+    name: 'MoTabsHead',
+    inject: ['eventBus'],
+    mounted() {
+      this.eventBus.$on('update:selected', (item, vm) => {
+        let {width, height, top, left} = vm.$el.getBoundingClientRect()
+        this.$refs.line.style.width = `${width}px`
+        this.$refs.line.style.left = `${left}px`
+      })
     }
   }
 </script>
 
 <style lang='scss' scoped>
-    $tab-height:40px;
-    $blue:blue;
-.tabs-head{
-    display: flex;
-    height: $tab-height;
-    justify-content: flex-start;
-    border:1px solid red;
-    position: relative;
-    >.line{
-        position: absolute;
-        bottom: 0;
-        border-bottom:4px solid $blue;
-        width: 100px;
+    $tab-height: 40px;
+    $blue: blue;
+    .tabs-head {
+        display: flex;
+        height: $tab-height;
+        justify-content: flex-start;
+        position: relative;
+
+        > .line {
+            position: absolute;
+            bottom: 0;
+            border-bottom: 4px solid $blue;
+            transition: all .3s;
+        }
+
+        > .actions-wrapper {
+            margin-left: auto;
+        }
     }
-    >.actions-wrapper{
-        margin-left: auto;
-    }
-}
 </style>
