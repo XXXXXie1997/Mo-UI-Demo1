@@ -12,6 +12,12 @@ import Content from './content'
 import Footer from './footer'
 import Toast from './toast'
 import Plugin from './plugin'
+import Tabs from './tabs'
+import TabsBody from './tabs-body'
+import TabsHead from './tabs-head'
+import TabsItem from './tabs-item'
+import TabsPane from './tabs-pane'
+
 
 Vue.component('mo-icon', Icon)
 Vue.component('mo-button', Button)
@@ -26,6 +32,12 @@ Vue.component('mo-content', Content)
 Vue.component('mo-footer', Footer)
 Vue.component('mo-toast', Toast)
 Vue.use(Plugin)
+Vue.component('mo-tabs', Tabs)
+Vue.component('mo-tabs-body', TabsBody)
+Vue.component('mo-tabs-head', TabsHead)
+Vue.component('mo-tabs-item', TabsItem)
+Vue.component('mo-tabs-pane', TabsPane)
+
 
 
 new Vue({
@@ -35,6 +47,7 @@ new Vue({
     loading2: true,
     loading3: false,
     message: 'hi',
+    selectedTab:'tab1',
   },
   created() {
 
@@ -47,7 +60,7 @@ new Vue({
         enableHtml: false,
         closeButton: {
           text:'摸了',
-          callback(toast){
+          callback(){
             console.log('他说他要摸了')
           }
         },
@@ -60,7 +73,7 @@ new Vue({
         enableHtml: false,
         closeButton: {
           text:'摸了',
-          callback(toast){
+          callback(){
             console.log('他说他要摸了')
           }
         },
@@ -73,7 +86,7 @@ new Vue({
         enableHtml: false,
         closeButton: {
           text:'摸了',
-          callback(toast){
+          callback(){
             console.log('他说他要摸了')
           }
         },
@@ -86,7 +99,7 @@ new Vue({
         enableHtml: false,
         closeButton: {
           text:'摸了',
-          callback(toast){
+          callback(){
             console.log('他说他要摸了')
           }
         },
