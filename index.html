@@ -35,22 +35,23 @@
 
 </head>
 <body>
-<div id="app">
-    <mo-tabs :selected.sync="selectedTab">
-        <mo-tabs-head>
-            <template slot="actions">
-                <button>setting</button>
-            </template>
-            <mo-tabs-item name="tab1"><mo-icon name="settings"></mo-icon>tab1</mo-tabs-item>
-            <mo-tabs-item name="tab2" disabled>tab2</mo-tabs-item>
-            <mo-tabs-item name="tab3">tab3</mo-tabs-item>
-        </mo-tabs-head>
-        <mo-tabs-body>
-            <mo-tabs-pane name="tab1">11111111</mo-tabs-pane>
-            <mo-tabs-pane name="tab2">22222222</mo-tabs-pane>
-            <mo-tabs-pane name="tab3">33333333</mo-tabs-pane>
-        </mo-tabs-body>
-    </mo-tabs>
+
+<div id="app" style="padding-top:100px;padding-left: 100px">
+
+    <mo-popover>
+        <template slot="content">
+            <div>popover内容</div>
+        </template>
+            <button>戳我</button>
+    </mo-popover>
+    <mo-popover>
+        <template slot="content">
+            <div>popover内容</div>
+        </template>
+            <button>戳我</button>
+    </mo-popover>
+
+
 
 </div>
 
