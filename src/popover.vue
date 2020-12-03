@@ -46,14 +46,16 @@
 
       },
       onClickDocument(e){
-        if (this.$refs.popover && (
-          this.$refs.popover === e.target || this.$refs.popover.contains(e.target))
-        ){
-          return
-        }else {
-          this.close()
 
+        //TODO
+        //点击弹出content不关闭content待实现
+        if (this.$refs.contentWrappe && this.$refs.contentWrapper === e.target
+
+        ){return}else {
+          this.close()
+          console.log('closed')
         }
+
       }
     },
     mounted() {
