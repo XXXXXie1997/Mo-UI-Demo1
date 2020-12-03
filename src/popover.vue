@@ -46,11 +46,8 @@
 
       },
       onClickDocument(e){
-
-        //TODO
-        //点击弹出content不关闭content待实现
-        if (this.$refs.contentWrappe && this.$refs.contentWrapper === e.target
-
+        //可能留有BUG
+        if (this.$refs.contentWrapper.contains(e.target)
         ){return}else {
           this.close()
           console.log('closed')
