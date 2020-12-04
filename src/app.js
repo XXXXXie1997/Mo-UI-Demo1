@@ -38,8 +38,7 @@ Vue.component('mo-tabs-body', TabsBody)
 Vue.component('mo-tabs-head', TabsHead)
 Vue.component('mo-tabs-item', TabsItem)
 Vue.component('mo-tabs-pane', TabsPane)
-Vue.component('mo-popover',Popover)
-
+Vue.component('mo-popover', Popover)
 
 
 new Vue({
@@ -49,7 +48,7 @@ new Vue({
     loading2: true,
     loading3: false,
     message: 'hi',
-    selectedTab:'tab1',
+    selectedTab: 'tab1',
   },
   created() {
 
@@ -57,55 +56,55 @@ new Vue({
   },
   methods: {
     showToast1() {
-      this.$toast('丢人！',{
-        position:'top',
+      this.$toast('丢人！', {
+        position: 'top',
         enableHtml: false,
         closeButton: {
-          text:'摸了',
-          callback(){
+          text: '摸了',
+          callback() {
             console.log('他说他要摸了')
           }
         },
-        autoClose:3,
+        autoClose: 3,
       })
     },
     showToast2() {
-      this.$toast('丢人！',{
-        position:'middle',
+      this.$toast('丢人！', {
+        position: 'middle',
         enableHtml: false,
         closeButton: {
-          text:'摸了',
-          callback(){
+          text: '摸了',
+          callback() {
             console.log('他说他要摸了')
           }
         },
-        autoClose:3,
+        autoClose: 3,
       })
     },
     showToast3() {
-      this.$toast('丢人！',{
-        position:'bottom',
+      this.$toast('丢人！', {
+        position: 'bottom',
         enableHtml: false,
         closeButton: {
-          text:'摸了',
-          callback(){
+          text: '摸了',
+          callback() {
             console.log('他说他要摸了')
           }
         },
-        autoClose:3,
+        autoClose: 3,
       })
     },
     showToast(position) {
-      this.$toast('丢人！',{
+      this.$toast('丢人！', {
         position,
         enableHtml: false,
         closeButton: {
-          text:'摸了',
-          callback(){
+          text: '摸了',
+          callback() {
             console.log('他说他要摸了')
           }
         },
-        autoClose:3,
+        autoClose: 3,
       })
     }
   }
