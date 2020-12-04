@@ -3,7 +3,7 @@
         <div ref="contentWrapper" v-if="visible" class="content-wrapper">
             <slot name="content"></slot>
         </div>
-        <span ref="triggerWrapper">
+        <span class="triggerWrapper" ref="triggerWrapper">
               <slot></slot>
         </span>
 
@@ -21,7 +21,7 @@
         if (this.$refs.triggerWrapper.contains(event.target)) {
           if (this.visible === true) {
             this.close()
-          }else{
+          } else {
             this.open()
           }
         }
@@ -31,7 +31,7 @@
         setTimeout(() => {
           this.positionContent()
           document.addEventListener('click', this.onClickDocument)
-        },0)
+        }, 0)
       },
       positionContent() {
         document.body.appendChild(this.$refs.contentWrapper)
@@ -40,18 +40,16 @@
         this.$refs.contentWrapper.style.top = top + window.scrollY + 'px'
       },
 
-      close(){
+      close() {
         this.visible = false
         document.removeEventListener('click', this.onClickDocument)
 
       },
-      onClickDocument(e){
-        //可能留有BUG
-        if (this.$refs.contentWrapper.contains(e.target)
-        ){return}else {
-          this.close()
-        }
-
+      onClickDocument(e) {
+        if (this.$refs.popover && (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))) {return}
+        if (this.$refs.contentWrapper && (this.$refs.contentWrapper === e.target || this.$refs.contentWrapper.contains(e.target))
+        ) {return}
+        this.close()
       }
     },
     mounted() {
@@ -61,6 +59,8 @@
 </script>
 
 <style lang='scss' scoped>
+    $border-color: #333;
+    $border-radius: 4px;
     .popover {
         display: inline-block;
         vertical-align: top;
@@ -69,8 +69,40 @@
 
     .content-wrapper {
         position: absolute;
-        border: 1px solid red;
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+        border: 1px solid $border-color;
+        border-radius: $border-radius;
+        padding: 0.5em 1em;
+        filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+        background: white;
         transform: translateY(-100%);
+        margin-top: -10px;
+        max-width: 20em;
+        word-break: break-all;
+
+        &::before, &::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: 10px;
+
+        }
+
+        &::before {
+            border: 10px solid transparent;
+            border-top-color: $border-color;
+            top: 100%;
+        }
+
+        &::after {
+            border: 10px solid transparent;
+            border-top-color: white;
+            top: calc(100% - 1px);
+        }
+    }
+
+    .triggerWrapper {
+        display: inline-block;
     }
 </style>
