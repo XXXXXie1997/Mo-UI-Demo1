@@ -33,22 +33,30 @@
         eventBus: this.eventBus
       }
     },
-    mounted() {
-      if(this.$children.length ===0){
-        console && console.warn &&
-       console.warn('缺少子组件：tabs需要子组件tabs-head和tabs-body')
-      }
-      this.$children.forEach((vm) => {
-        if (vm.$options.name === 'MoTabsHead') {
-          vm.$children.forEach((childVm) => {
-            if (childVm.$options.name === 'MoTabsItem'
-              && childVm.$props.name === this.selected) {
-              console.log(childVm.$el)
-              this.eventBus.$emit('update:selected', this.selected,childVm)
-            }
-          })
+    methods: {
+      checkChildren() {
+        if (this.$children.length === 0) {
+          console && console.warn &&
+          console.warn('缺少子组件：tabs需要子组件tabs-head和tabs-body')
         }
-      })
+      },
+      selectTab() {
+        this.$children.forEach((vm) => {
+          if (vm.$options.name === 'MoTabsHead') {
+            vm.$children.forEach((childVm) => {
+              if (childVm.$options.name === 'MoTabsItem'
+                && childVm.$props.name === this.selected) {
+                console.log(childVm.$el)
+                this.eventBus.$emit('update:selected', this.selected, childVm)
+              }
+            })
+          }
+        })
+      },
+    },
+    mounted() {
+      this.checkChildren()
+      this.selectTab()
     }
   }
 </script>

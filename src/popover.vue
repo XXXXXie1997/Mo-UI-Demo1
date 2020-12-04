@@ -50,7 +50,6 @@
         if (this.$refs.contentWrapper.contains(e.target)
         ){return}else {
           this.close()
-          console.log('closed')
         }
 
       }
