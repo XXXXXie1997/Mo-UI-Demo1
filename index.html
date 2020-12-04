@@ -39,8 +39,10 @@
 <div id="app" style="padding-left: 100px">
     <div style="overflow: hidden;padding-top:200px;padding-bottom: 40px">
         <mo-popover>
-            <template slot="content">
-                <div>popover内容</div>
+            <template slot="content" slot-scope="{close}">
+                <div>popover内容
+                <mo-button @click="close">close</mo-button>
+                </div>
             </template>
             <mo-button>上</mo-button>
         </mo-popover>
