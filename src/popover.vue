@@ -34,20 +34,7 @@
       }
     },
     computed:{
-      openEvent(){
-        if(this.trigger==='click'){
-          return 'click'
-        }else{
-          return 'mouseenter'
-        }
-      },
-      closeEvent(){
-        if(this.trigger==='click'){
-          return 'click'
-        }else{
-          return 'mouseleave'
-        }
-      }
+
     },
     props: {
       position: {
@@ -63,7 +50,7 @@
         validator(value){
           return ['click','hover'].indexOf(value)>=0
         }
-      }
+      },
     },
     methods: {
       onClick(event) {
