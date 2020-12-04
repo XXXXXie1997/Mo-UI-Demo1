@@ -161,7 +161,9 @@
             transform: translateY(-100%);
             margin-top: -10px;
 
+
             &::before, &::after {
+                border-bottom: none;
                 left: 10px;
             }
 
@@ -176,11 +178,11 @@
             }
         }
 
-
         &.position-bottom {
             margin-top: 10px;
 
             &::before, &::after {
+                border-top: none;
                 left: 10px;
             }
 
@@ -200,6 +202,7 @@
             margin-left: -10px;
 
             &::before, &::after {
+                border-right: none;
                 transform: translateY(-50%);
                 top: 50%;
             }
@@ -219,6 +222,7 @@
             margin-left: 10px;
 
             &::before, &::after {
+                border-left: none;
                 transform: translateY(-50%);
                 top: 50%;
             }
