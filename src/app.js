@@ -49,7 +49,7 @@ Vue.component('mo-collapse-item', CollapseItem)
 new Vue({
   el: '#app',
   data: {
-    selectedTab: '2',
+    selectedTab: [],
   },
   created() {
 
