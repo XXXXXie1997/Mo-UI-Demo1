@@ -1,6 +1,6 @@
 <template>
     <div class="collapseItem">
-        <div class="title" @click="open=!open">
+        <div class="title" @click="toggle">
             {{title}}
         </div>
         <div class="content" v-if="open">
@@ -18,9 +18,30 @@
         require: true,
       }
     },
-    data(){
-      return{
-        open:false
+    data() {
+      return {
+        open: false
+      };
+    },
+    inject: ['eventBus'],
+    mounted() {
+      this.eventBus && this.eventBus.$on('update:selected', (vm) => {
+        if (vm !== this) {
+          this.close();
+        }
+      });
+    },
+    methods: {
+      toggle() {
+        if (this.open) {
+          this.open = false;
+        } else {
+          this.open = true;
+          this.eventBus && this.eventBus.$emit('update:selected', this);
+        }
+      },
+      close() {
+        this.open = false;
       }
     }
   };
@@ -38,7 +59,7 @@
             min-height: 32px;
             display: flex;
             align-items: center;
-            padding: 0 8px
+            padding: 0 8px;
         }
 
         &:first-child {
@@ -47,8 +68,9 @@
                 border-top-right-radius: $border-radius;
             }
         }
-        &:last-child{
-            >.title:last-child{
+
+        &:last-child {
+            > .title:last-child {
                 border-bottom-left-radius: $border-radius;
                 border-bottom-right-radius: $border-radius;
             }
