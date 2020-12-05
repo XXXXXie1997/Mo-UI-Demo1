@@ -18,6 +18,8 @@ import TabsHead from './tabs-head'
 import TabsItem from './tabs-item'
 import TabsPane from './tabs-pane'
 import Popover from './popover'
+import Collapse from  './collapse'
+import CollapseItem from './collapse-item'
 
 
 Vue.component('mo-icon', Icon)
@@ -39,6 +41,9 @@ Vue.component('mo-tabs-head', TabsHead)
 Vue.component('mo-tabs-item', TabsItem)
 Vue.component('mo-tabs-pane', TabsPane)
 Vue.component('mo-popover', Popover)
+Vue.component('mo-collapse', Collapse)
+Vue.component('mo-collapse-item', CollapseItem)
+
 
 
 new Vue({
