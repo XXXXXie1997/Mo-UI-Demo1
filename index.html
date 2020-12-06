@@ -15,33 +15,91 @@
         }
 
         html {
-            --button-height: 32px;
-            --font-size: 14px;
-            --button-bg: white;
-            --button-active-bg: #eee;
-            --border-radius: 4px;
-            --color: #333;
-            --border-color: #999;
-            --border-color-hover: #666;
+
         }
 
         #app {
         }
 
         body {
-            font-size: var(--font-size);
+            font-size: 14px;
+        }
+        .wrapper{
+            padding: 10px;
+            border: 1px solid #bbb;
+            min-height: 22em;
+        }
+        .layout{
+            min-width: 100vh;
+            min-height: 100vh;
+        }
+        .sider{
+            min-width: 25vh;
+            border-right: 1px solid #aaa;
+
         }
     </style>
 
 </head>
 <body>
 
-<div id="app" style="padding: 100px">
-   <mo-collapse :selected.sync="selectedTab">
-       <mo-collapse-item title="标题1" name="1">内容1</mo-collapse-item>
-       <mo-collapse-item title="标题2" name="2">内容2</mo-collapse-item>
-       <mo-collapse-item title="标题3" name="3">内容3</mo-collapse-item>
-   </mo-collapse>
+<div id="app">
+
+    <mo-layout class="layout">
+        <mo-sider class="sider">
+            <mo-collapse :selected.sync="selectedTab">
+                <mo-collapse-item title="安装" name="1">111</mo-collapse-item>
+                <mo-collapse-item title="组件" name="2">222</mo-collapse-item>
+            </mo-collapse>
+        </mo-sider>
+        <mo-content>
+            <h1>button组件</h1>
+            <div>预览：</div>
+
+            <mo-button icon="settings">默认按键</mo-button>
+            <h1>button group 按键组</h1>
+            <div>预览：</div>
+            <mo-button-group>
+                <mo-button>1</mo-button>
+                <mo-button>2</mo-button>
+                <mo-button>3</mo-button>
+            </mo-button-group>
+
+            <h1>网格组件</h1>
+            <div>预览：</div>
+            <mo-row>
+                <mo-col style="height: 2em;background:skyblue" span="12" >12/24</mo-col>
+                <mo-col style="height: 2em;background:skyblue" offset="2" span="10">10/24</mo-col>
+            </mo-row>
+            <h1>collapse组件</h1>
+            <div>预览：</div>
+            <div class="wrapper">
+                <mo-collapse :selected.sync="selectedTab">
+                    <mo-collapse-item title="标题1" name="1">内容1</mo-collapse-item>
+                    <mo-collapse-item title="标题2" name="2">内容2</mo-collapse-item>
+                </mo-collapse>
+                <div>也可以支持只可同时打开一栏</div>
+                <mo-collapse :selected.sync="selectedTab" single>
+                    <mo-collapse-item title="标题1" name="1">内容1</mo-collapse-item>
+                    <mo-collapse-item title="标题2" name="2">内容2</mo-collapse-item>
+                </mo-collapse>
+
+            </div>
+
+            <h1>popover组件</h1>
+            <div>预览：</div>
+            <mo-popover position="top" trigger="hover">
+                <template slot="content"><div>rua</div></template>
+                <mo-button>hover</mo-button>
+            </mo-popover>
+            <mo-popover position="bottom">
+                <template slot="content"><div>rua</div></template>
+                <mo-button>click</mo-button>
+            </mo-popover>
+        </mo-content>
+    </mo-layout>
+
+
 </div>
 
 <script src="./src/app.js"></script>
