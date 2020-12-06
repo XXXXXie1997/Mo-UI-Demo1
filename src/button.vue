@@ -10,12 +10,13 @@
     </button>
 </template>
 
-<script lang='ts'>
-    import Icon from './icon.vue'
+<script lang='js'>
+  import Icon from './icon.vue';
+
   export default {
-      name:'MoButton',
-    components:{
-      'mo-icon':Icon
+    name: 'MoButton',
+    components: {
+      'mo-icon': Icon
     },
     props: {
       icon: {},
@@ -45,23 +46,24 @@
     }
 
     .mo-button {
-        font-size: var(--font-size);
-        height: var(--button-height);
+        @import "var";
+        font-size: $font-size;
+        height: $button-height;
         padding: 0 1em;
-        border-radius: var(--border-radius);
-        border: 1px solid var(--border-color);
-        background: var(--button-bg);
+        border-radius: $border-radius;
+        border: 1px solid $border-color;
+        background: $button-bg;
         display: inline-flex;
         justify-content: center;
         align-items: center;
         vertical-align: middle;
 
         &:hover {
-            border-color: var(--border-color-hover)
+            border-color: $border-color-hover
         }
 
         &:active {
-            background-color: var(--button-active-bg);
+            background-color: $button-active-bg;
         }
 
         &:focus {
